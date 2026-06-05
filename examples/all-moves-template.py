@@ -80,6 +80,11 @@ MISSION = [
     ("speed", 100),
     ("back",  30),
 
+    ("speed", 10),
+    ("fwd",   100),
+    ("speed", 200),
+    ("back",  100),
+    
     ("land",),
 ]
 

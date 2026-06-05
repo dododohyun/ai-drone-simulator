@@ -11,6 +11,8 @@
       실기 테스트 시 거리를 20 이상 정수로 올려주세요.
 """
 
+from typing import final
+
 from DroneBlocksTelloSimulator.tello import Tello
 
 units = 'cm'
@@ -24,29 +26,33 @@ tello.connect()
 # 3) 배터리 확인
 print(f'배터리: {tello.get_battery()}%')
 
+try:
+  
 # 4) 이륙
-tello.takeoff()
+  tello.takeoff()
 
 # 5) 위로 상승
 # tello.fly_up(20, units)
 
+  tello.set_speed(30)
 # 6) 의자 앞쪽으로 전진
-tello.fly_forward(40, units)
+  tello.fly_forward(200, units)
 
 # 7) 왼쪽으로 정렬
-tello.fly_left(40, units)
+  tello.fly_left(50, units)
 
 # 8) 앞으로 미세 전진
-tello.fly_forward(40, units)
+  tello.fly_forward(120, units)
 
 # 9) 오른쪽으로 정렬
-tello.fly_right(20, units)
+  tello.fly_right(63, units)
 
 # 10) 의자 중심 좌석 위로 후진
-tello.fly_backward(20, units)
+  tello.fly_backward(40, units)
 
 # 11) 의자 중심 착륙
-tello.land()
-
+  tello.land()
+  pass
+finally:
 # 12) 소켓 정리
-tello.end()
+  tello.end()
